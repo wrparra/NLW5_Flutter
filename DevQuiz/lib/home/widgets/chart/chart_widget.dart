@@ -14,6 +14,10 @@ class ChartWidget extends StatelessWidget {
             child: Container(
               width: 80,
               height: 80,
+              constraints: BoxConstraints(
+                maxWidth: 80,
+                maxHeight: 80,
+              ),
               child: CircularProgressIndicator(
                 strokeWidth: 10,
                 value: .75,

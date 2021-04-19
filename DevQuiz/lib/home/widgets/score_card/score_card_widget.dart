@@ -17,18 +17,18 @@ class ScoreCardWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
             boxShadow: [BoxShadow(color: AppColors.lightGrey, blurRadius: 5)]),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
-                flex: 1,
+              Container(
+                //flex: 1,
                 child: ChartWidget(),
               ),
               Expanded(
-                flex: 3,
+                //flex: 3,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 30),
+                  padding: const EdgeInsets.only(left: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
