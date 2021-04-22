@@ -91,4 +91,16 @@ class AppTextStyles {
     fontSize: 11,
     fontWeight: FontWeight.normal,
   );
+
+  static final TextStyle buttonTextDefault = GoogleFonts.notoSans(
+    color: AppColors.grey,
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
+  );
+
+  static final TextStyle buttonTextPrimary = GoogleFonts.notoSans(
+    color: AppColors.white,
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
+  );
 }

@@ -8,9 +8,13 @@ class QuizCardWidget extends StatelessWidget {
   final String title;
   final int answered;
   final int total;
-
+  final VoidCallback onTap;
   const QuizCardWidget(
-      {Key? key, required this.title, this.answered = 0, this.total = 0})
+      {Key? key,
+      required this.title,
+      this.answered = 0,
+      this.total = 0,
+      required this.onTap})
       : super(key: key);
 
   double getProgressValue() {
@@ -22,55 +26,60 @@ class QuizCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-            color: AppColors.white,
-            border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
-            borderRadius: BorderRadius.circular(10)),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                      width: 40,
-                      height: 40,
-                      child: Image.asset(AppImages.blocks)),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Row(
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+          decoration: BoxDecoration(
+              color: AppColors.white,
+              border:
+                  Border.fromBorderSide(BorderSide(color: AppColors.border)),
+              borderRadius: BorderRadius.circular(10)),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
                   children: [
                     Container(
-                      height: 40,
-                      child: Text(
-                        title,
-                        style: AppTextStyles.body15,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                      ),
-                    ),
+                        width: 40,
+                        height: 40,
+                        child: Image.asset(AppImages.blocks)),
                   ],
                 ),
-              ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 60,
-                    child: Text(
-                      "$answered de $total",
-                      style: AppTextStyles.body11,
-                    ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        child: Text(
+                          title,
+                          style: AppTextStyles.body15,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                      ),
+                    ],
                   ),
-                  Expanded(
-                      child: ProgressIndicatorWidget(value: getProgressValue()))
-                ],
-              )
-            ],
-          ),
-        ));
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 60,
+                      child: Text(
+                        "$answered de $total",
+                        style: AppTextStyles.body11,
+                      ),
+                    ),
+                    Expanded(
+                        child:
+                            ProgressIndicatorWidget(value: getProgressValue()))
+                  ],
+                )
+              ],
+            ),
+          )),
+    );
   }
 }

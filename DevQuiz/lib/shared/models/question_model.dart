@@ -7,7 +7,7 @@ class QuestionModel {
   final List<AnswerModel> answers;
 
   QuestionModel({required this.title, required this.answers})
-      : assert(answers.length == 4);
+      : assert(answers.length > 1 && answers.length <= 4);
 
   Map<String, dynamic> toMap() {
     return {

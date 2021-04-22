@@ -1,6 +1,5 @@
-//import 'package:DevQuiz/challenge/challenge_page.dart';
 import 'package:DevQuiz/home/home_page.dart';
-//import 'package:DevQuiz/splash/splash_page.dart';
+import 'package:DevQuiz/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -11,7 +10,10 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: SplashPage(),
+      routes: <String, WidgetBuilder>{
+        '/homePage': (BuildContext context) => new HomePage()
+      },
     );
   }
 }

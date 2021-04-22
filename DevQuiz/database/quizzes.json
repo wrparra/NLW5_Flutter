@@ -8,10 +8,11 @@
             "title": "O que está achando do NLW?",
             "answers": [
                 {
-                    "title": "Estou curtindo"
+                    "title": "Estou curtindo",
+                    "isRight": true
                 },
                 {
-                    "title": "Estou amando"
+                    "title": "Estou amando"                    
                 },
                 {
                     "title": "Estou achando difícil"
@@ -28,13 +29,29 @@
                     "title": "Estou curtindo"
                 },
                 {
-                    "title": "Estou amando"
+                    "title": "Estou amando",
+                    "isRight": true
                 },
                 {
                     "title": "Estou achando difícil"
                 },
                 {
                     "title": "Não estou gostando"
+                }
+            ]
+        },
+        {
+            "title": "Indicaria o curso para outras pessoas?",
+            "answers": [
+                {
+                    "title": "Sim",
+                    "isRight": true
+                },
+                {
+                    "title": "Talvez"                    
+                },                
+                {
+                    "title": "Não"
                 }
             ]
         }

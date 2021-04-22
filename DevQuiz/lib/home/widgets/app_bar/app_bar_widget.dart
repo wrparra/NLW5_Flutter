@@ -10,45 +10,43 @@ class AppBarWidget extends PreferredSize {
   AppBarWidget({required this.user})
       : super(
             preferredSize: Size.fromHeight(250),
-            child: SafeArea(
-              child: Container(
-                height: 250,
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 160,
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      width: double.maxFinite,
-                      decoration: BoxDecoration(gradient: AppGradients.linear),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text.rich(
-                            TextSpan(
-                                text: "Olá, ",
-                                style: AppTextStyles.title,
-                                children: [
-                                  TextSpan(
-                                      text: user.name,
-                                      style: AppTextStyles.titleBold)
-                                ]),
-                          ),
-                          Container(
-                            width: 48,
-                            height: 48,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: NetworkImage(user.photoUrl))),
-                          )
-                        ],
-                      ),
+            child: Container(
+              height: 250,
+              child: Stack(
+                children: [
+                  Container(
+                    height: 160,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(gradient: AppGradients.linear),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text.rich(
+                          TextSpan(
+                              text: "Olá, ",
+                              style: AppTextStyles.title,
+                              children: [
+                                TextSpan(
+                                    text: user.name,
+                                    style: AppTextStyles.titleBold)
+                              ]),
+                        ),
+                        Container(
+                          width: 48,
+                          height: 48,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: NetworkImage(user.photoUrl))),
+                        )
+                      ],
                     ),
-                    Align(
-                        alignment: Alignment(0, 1),
-                        child: ScoreCardWidget(user: user)),
-                  ],
-                ),
+                  ),
+                  Align(
+                      alignment: Alignment(0, 1),
+                      child: ScoreCardWidget(user: user)),
+                ],
               ),
             ));
 }
