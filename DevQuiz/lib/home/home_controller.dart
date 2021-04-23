@@ -16,14 +16,14 @@ class HomeController {
 
   void getUser() async {
     state = HomeState.loading;
-    await Future.delayed(Duration(seconds: 1));
+    //await Future.delayed(Duration(seconds: 1));
     user = await homeRepository.getUSer();
     state = HomeState.success;
   }
 
   void getQuizzes() async {
     state = HomeState.loading;
-    await Future.delayed(Duration(seconds: 1));
+    //await Future.delayed(Duration(seconds: 1));
     quizzes = await homeRepository.getQuizzes();
     state = HomeState.success;
   }
